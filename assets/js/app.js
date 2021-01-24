@@ -12,7 +12,7 @@ function makeResponsive(){
         top: 50,
         bottom: 50,
         right: 30,
-        left: 30
+        left: 50
     };
     
       var height = svgHeight - margin.top - margin.bottom;
@@ -54,7 +54,7 @@ var xScale = d3.scaleLinear()
 
 var yScale = d3.scaleLinear()
     .domain([15, d3.max(statedata, d => d.obesity )])
-    .range([height, 0]);
+    .range([height, 20]);
 
 // Create Axes
 var xaxis = d3.axisBottom(xScale);
@@ -98,11 +98,24 @@ var labels = chartGroup.selectAll(null)
  
  var labelsGroup = chartGroup.append("g")
     .attr("transform", `translate(${width / 2}, ${height + 20})`);
+
+// Label X axis
 var povertylabel =  labelsGroup.append("text")
     .attr("x", 0)
     .attr("y", 20)
     .text("Poverty %")
-    .classed("active", "True");
+    .classed("axis-text", "True");
+
+// Label Y axis
+
+var obesitylabel =  chartGroup.append("text")
+    .attr('transform', 'rotate(-90)')
+    .attr("x", 0-(height/2))
+    .attr("y", 0-(margin.left))
+    .attr("dy", "1em")
+    .text("Obesity %")
+    .classed("axis-text", true);
+
 
 });  
 };  
