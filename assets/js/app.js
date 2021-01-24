@@ -6,7 +6,7 @@ function makeResponsive(){
     SVGarea.remove();
   }
     
-    var svgWidth = 800;
+    var svgWidth = (window.innerWidth)/1.75;
     var svgHeight = 500;  
     var margin = {
         top: 50,
@@ -75,7 +75,7 @@ var scatter = chartGroup.selectAll("circle")
     .append("circle")
     .attr("cx", d => xScale(d.poverty))
     .attr("cy", d => yScale(d.obesity))
-    .attr("r", "11")
+    .attr("r", "12")
     .attr("fill", "gold")
     .attr("fill-opacity","0.5")
     .attr("stroke-width", "1")
@@ -104,7 +104,7 @@ var povertylabel =  labelsGroup.append("text")
     .attr("x", 0)
     .attr("y", 20)
     .text("Poverty %")
-    .classed("axis-text", "True");
+    .classed("active", "True");
 
 // Label Y axis
 
@@ -114,7 +114,7 @@ var obesitylabel =  chartGroup.append("text")
     .attr("y", 0-(margin.left))
     .attr("dy", "1em")
     .text("Obesity %")
-    .classed("axis-text", true);
+    .classed("active", true);
 
 
 });  
