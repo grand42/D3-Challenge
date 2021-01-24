@@ -9,7 +9,7 @@ function makeResponsive(){
     var svgWidth = 800;
     var svgHeight = 500;  
     var margin = {
-        top: 30,
+        top: 50,
         bottom: 50,
         right: 30,
         left: 30
@@ -46,12 +46,12 @@ statedata.forEach(function(data) {
 
 // Create Scales
 var xScale = d3.scaleLinear()
-    .domain([0, d3.max(statedata, d => d.poverty)])
+    .domain([8,d3.max(statedata, d => d.poverty)])
     .range([0, width]);
 
 
 var yScale = d3.scaleLinear()
-    .domain([0, d3.max(statedata, d => d.obesity )])
+    .domain([15, d3.max(statedata, d => d.obesity )])
     .range([height, 0]);
 
 // Create Axes
