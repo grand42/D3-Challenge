@@ -1,12 +1,18 @@
 //Make Responsive
 function makeResponsive(){
+    var SVGarea = d3.select("body").select("svg");
+      // clear svg is not empty
+  if (!SVGarea.empty()) {
+    SVGarea.remove();
+  }
+    
     var svgWidth = window.innerWidth;
     var svgHeight = window.innerHeight;  
     var margin = {
         top: 50,
         bottom: 50,
-        right: 50,
-        left: 50
+        right: 500,
+        left: 30
     };
     
       var height = svgHeight - margin.top - margin.bottom;
