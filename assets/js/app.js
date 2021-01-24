@@ -43,6 +43,11 @@ var xScale = d3.scaleLinear()
     .domain([0, d3.max(statedata, d => d.poverty)])
     .range([0, width]);
 };
+
+var yScale = d3.scaleLinear()
+    .domain([0, d3.max(statedata, d => d.obesity )])
+    .range([height, 0]);
+    
 // When the browser loads, makeResponsive() is called.
 makeResponsive();
 
