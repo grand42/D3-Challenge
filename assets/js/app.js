@@ -40,6 +40,8 @@ statedata.forEach(function(data) {
     data.obesity = +data.obesity;
     data.poverty = +data.poverty;
     data.smokes = +data.smokes;
+    data.abbr = data.abbr;
+    console.log("State:", data.abbr);
     console.log("Obesity:",data.obesity);
     console.log("Poverty:", data.poverty);
 });  
@@ -78,6 +80,18 @@ var scatter = chartGroup.selectAll("circle")
     .attr("stroke-width", "1")
     .attr("stroke", "black");
 
+// Add labels
+var labels = chartGroup.selectAll("circle")
+    .data(statedata)
+    .enter()
+    .append('text')
+    .text(d => d.abbr)
+    .attr("x", d => xScale(d.poverty))
+    .attr("y", d => yScale(d.obesity))
+    .attr('dy', "0.3em")
+    .attr("text-anchor", "middle")
+    .attr("font-size", "12px")
+    .style("fill", "black");
 
 });  
 };  
