@@ -98,6 +98,11 @@ var labels = chartGroup.selectAll(null)
  
  var labelsGroup = chartGroup.append("g")
     .attr("transform", `translate(${width / 2}, ${height + 20})`);
+var povertylabel =  labelsGroup.append("text")
+    .attr("x", 0)
+    .attr("y", 20)
+    .text("Poverty %")
+    .classed("active", "True");
 
 });  
 };  
