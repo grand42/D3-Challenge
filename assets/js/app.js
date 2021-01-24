@@ -94,6 +94,11 @@ var labels = chartGroup.selectAll(null)
     .attr("font-size", "12px")
     .style("fill", "black");
 
+ // Create axes labels
+ 
+ var labelsGroup = chartGroup.append("g")
+    .attr("transform", `translate(${width / 2}, ${height + 20})`);
+
 });  
 };  
 // When the browser loads, makeResponsive() is called.
