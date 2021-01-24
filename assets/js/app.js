@@ -56,6 +56,9 @@ var yaxis = d3.axisLeft(yScale);
 chartGroup.append("g")
     .attr("transform", `translate(0, ${height})`)
     .call(xaxis);
+
+chartGroup.append("g")
+    .call(yaxis);
 });  
 };  
 // When the browser loads, makeResponsive() is called.
