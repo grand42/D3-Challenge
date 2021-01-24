@@ -6,12 +6,12 @@ function makeResponsive(){
     SVGarea.remove();
   }
     
-    var svgWidth = window.innerWidth;
-    var svgHeight = window.innerHeight;  
+    var svgWidth = 800;
+    var svgHeight = 500;  
     var margin = {
-        top: 50,
+        top: 30,
         bottom: 50,
-        right: 500,
+        right: 30,
         left: 30
     };
     
@@ -65,6 +65,20 @@ chartGroup.append("g")
 
 chartGroup.append("g")
     .call(yaxis);
+
+// Add data
+var scatter = chartGroup.selectAll("circle")
+    .data(statedata)
+    .enter()
+    .append("circle")
+    .attr("cx", d => xScale(d.poverty))
+    .attr("cy", d => yScale(d.obesity))
+    .attr("r", "10")
+    .attr("fill", "gold")
+    .attr("stroke-width", "1")
+    .attr("stroke", "black");
+
+
 });  
 };  
 // When the browser loads, makeResponsive() is called.
