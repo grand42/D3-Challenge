@@ -127,10 +127,9 @@ var toolTip = d3.select("#scatter")
 scatter.on("mouseover", function(d) {
 toolTip.style("display", "block")
     .html(
-      `<strong>${d.state}</strong><hr> Poverty: ${d.poverty}<br>Obesity: ${d.obesity}`)
+      `<strong>${d.state}</strong><br>Poverty: ${d.poverty}%<br>Obesity: ${d.obesity}%`)
       .style("left", d3.event.pageX + "px")
-    .style("top", d3.event.pageY + "px")
-    ;
+    .style("top", d3.event.pageY + "px");
 })
 // Step 3: Create "mouseout" event listener to hide tooltip
 .on("mouseout", function() {

@@ -18,18 +18,6 @@
   text-anchor: middle;
 }
 
-.tooltip {
-  position: absolute;
-  width: 90px;
-  height: 70px;
-  padding: 10px;
-  font: 12px sans-serif;
-  text-align: center;
-  color: white;
-  background: blue;
-  border: 0;
-  border-radius: 10px;
-}
 
 .inactive:hover {
   fill: #000;
@@ -55,6 +43,7 @@
 
 .d3-tip {
   padding: 6px;
+  position: absolute;
   font-size: 12px;
   line-height: 1;
   line-height: 1.5em;
@@ -63,6 +52,19 @@
   text-transform: capitalize;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 4px;
+}
+
+.tooltip {
+  position: absolute;
+  width: 90px;
+  height: 70px;
+  padding: 10px;
+  font: 12px sans-serif;
+  text-align: center;
+  color: white;
+  background: blue;
+  border: 0;
+  border-radius: 10px;
 }
 
 /* Mobile Rules */
