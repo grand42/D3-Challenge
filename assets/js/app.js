@@ -116,6 +116,20 @@ var obesitylabel =  chartGroup.append("text")
     .text("Obesity %")
     .classed("active", true);
 
+// Add Mouseover tooltip
+// Append tool tip div
+var toolTip = d3.select("body")
+    .append("div")
+    .classed("tooltip", true);
+// Create mousover event listener
+scatter.on("mouseover", function(d) {
+    toolTip.style("display", "block")
+        .html('<strong>${d.abbr)}<strong><hr>Poverty: ${d.poverty} %')
+        .style("left", d3.event.pageX + "px")
+        .style("top", d3.event.pageY + "px");
+})
+
+
 
 });  
 };  
