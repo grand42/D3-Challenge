@@ -40,6 +40,7 @@ statedata.forEach(function(data) {
     data.obesity = +data.obesity;
     data.poverty = +data.poverty;
     data.smokes = +data.smokes;
+    data.state = data.state;
     data.abbr = data.abbr;
     console.log("State:", data.abbr);
     console.log("Obesity:",data.obesity);
@@ -117,19 +118,24 @@ var obesitylabel =  chartGroup.append("text")
     .classed("active", true);
 
 // Add Mouseover tooltip
-// Append tool tip div
-var toolTip = d3.select("body")
-    .append("div")
-    .classed("tooltip", true);
-// Create mousover event listener
+// Step 1: Append tooltip div
+var toolTip = d3.select("#scatter")
+.append("div")
+.classed("d3-tip", true);
+
+// Step 2: Create "mouseover" event listener to display tooltip
 scatter.on("mouseover", function(d) {
-    toolTip.style("display", "block")
-        .html('<strong>${d.abbr)}<strong><hr>Poverty: ${d.poverty} %')
-        .style("left", d3.event.pageX + "px")
-        .style("top", d3.event.pageY + "px");
+toolTip.style("display", "block")
+    .html(
+      `<strong>${d.state}</strong><hr> Poverty: ${d.poverty}<br>Obesity: ${d.obesity}`)
+      .style("left", d3.event.pageX + "px")
+    .style("top", d3.event.pageY + "px")
+    ;
 })
-
-
+// Step 3: Create "mouseout" event listener to hide tooltip
+.on("mouseout", function() {
+  toolTip.style("display", "none");
+});
 
 });  
 };  
