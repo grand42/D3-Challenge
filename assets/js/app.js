@@ -24,7 +24,7 @@ var chartGroup = svg.append("g")
 
 
 // Load Data from CSV
-d3.cvesv("assets/data/data.csv").then(function(statedata) {
+d3.csv("assets/data/data.csv").then(function(statedata) {
     console.log(statedata);
 // Cast each column as a number using the unary + operator
 statedata.forEach(function(data) {
@@ -38,3 +38,8 @@ statedata.forEach(function(data) {
 });  
 });
 };
+// When the browser loads, makeResponsive() is called.
+makeResponsive();
+
+// When the browser window is resized, makeResponsive() is called.
+d3.select(window).on("resize", makeResponsive);
