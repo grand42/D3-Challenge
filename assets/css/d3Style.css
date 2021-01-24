@@ -47,25 +47,14 @@
   font-size: 12px;
   line-height: 1;
   line-height: 1.5em;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   text-transform: capitalize;
-  background: rgba(0, 0, 0, 0.8);
+  background: #39603D;
   border-radius: 4px;
 }
 
-.tooltip {
-  position: absolute;
-  width: 90px;
-  height: 70px;
-  padding: 10px;
-  font: 12px sans-serif;
-  text-align: center;
-  color: white;
-  background: blue;
-  border: 0;
-  border-radius: 10px;
-}
+
 
 /* Mobile Rules */
 @media screen and (max-width: 530px) {

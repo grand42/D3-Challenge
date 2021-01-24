@@ -77,10 +77,10 @@ var scatter = chartGroup.selectAll("circle")
     .attr("cx", d => xScale(d.poverty))
     .attr("cy", d => yScale(d.obesity))
     .attr("r", "12")
-    .attr("fill", "gold")
+    .attr("fill", "#A3bCB6")
     .attr("fill-opacity","0.5")
     .attr("stroke-width", "1")
-    .attr("stroke", "black");
+    .attr("stroke", "#A3BCB6");
 
 // Add labels
 var labels = chartGroup.selectAll(null)
