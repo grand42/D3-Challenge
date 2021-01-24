@@ -50,6 +50,8 @@ var yScale = d3.scaleLinear()
 
 // Create Axes
 var xaxis = d3.axisBottom(xScale);
+var yaxis = d3.axisLeft(yScale);
+
 });  
 };  
 // When the browser loads, makeResponsive() is called.
