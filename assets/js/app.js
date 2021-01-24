@@ -34,9 +34,14 @@ statedata.forEach(function(data) {
     data.obesity = +data.obesity;
     data.poverty = +data.poverty;
     data.smokes = +data.smokes;
-    console.log("Age:",data.age);
+    console.log("Obesity:",data.obesity);
+    console.log("Poverty:", data.poverty);
 });  
-});
+});""
+// Create Scales
+var xScale = d3.scaleLinear()
+    .domain([0, d3.max(statedata, d => d.poverty)])
+    .range([0, width]);
 };
 // When the browser loads, makeResponsive() is called.
 makeResponsive();
