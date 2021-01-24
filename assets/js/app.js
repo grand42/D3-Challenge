@@ -52,6 +52,10 @@ var yScale = d3.scaleLinear()
 var xaxis = d3.axisBottom(xScale);
 var yaxis = d3.axisLeft(yScale);
 
+// Append Axes
+chartGroup.append("g")
+    .attr("transform", `translate(0, ${height})`)
+    .call(xaxis);
 });  
 };  
 // When the browser loads, makeResponsive() is called.
