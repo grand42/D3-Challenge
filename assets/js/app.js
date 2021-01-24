@@ -37,17 +37,21 @@ statedata.forEach(function(data) {
     console.log("Obesity:",data.obesity);
     console.log("Poverty:", data.poverty);
 });  
-});""
+
 // Create Scales
 var xScale = d3.scaleLinear()
     .domain([0, d3.max(statedata, d => d.poverty)])
     .range([0, width]);
-};
+
 
 var yScale = d3.scaleLinear()
     .domain([0, d3.max(statedata, d => d.obesity )])
     .range([height, 0]);
-    
+
+// Create Axes
+var xaxis = d3.axisBottom(xScale);
+});  
+};  
 // When the browser loads, makeResponsive() is called.
 makeResponsive();
 
